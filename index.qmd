@@ -1,0 +1,35 @@
+---
+about:
+  template: jolla
+  id: about-block
+  image: "img/my_image.jpg"
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/yugahikida
+    - icon: github
+      text: Github
+      href: https://github.com/yugahikida
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/yugahikida
+    - icon: google-scholar
+      text: "{{< fa graduation-cap >}} Google Scholar"
+      href: https://scholar.google.com/citations?user=jvKJHacAAAAJ
+    - icon: envelope
+      text: Email
+      href: "mailto:yuga.hikida@gmail.com"  
+---
+
+::: {#about-block}
+:::
+
+# Yuga Hikida
+
+I am a master student in Econometrics at [University Alliance Ruhr](https://www.econometrics.ruhr/).
+
+I am actively looking for funded Ph.D position in Bayesian statistics and 
+machine learning starting in winter 2024. Please reach me out if you think 
+there might be a fit 
+[yuga.hikida@gmail.com](mailto:yuga.hikida@gmail.com).
+

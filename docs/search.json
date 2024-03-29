@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Download current CV"
+  },
+  {
+    "objectID": "photography/index.html",
+    "href": "photography/index.html",
+    "title": "Photography",
+    "section": "",
+    "text": "As a wizard and scholar of Middle-earth, I have been studying the magic of the natural world for centuries. Through my self-portraits, I aim to capture the essence of my own being and reflect on my own journey through time. Each photograph is a reflection of my own experiences and emotions. Through my photography, I hope to offer a glimpse into my life as a scholar and adventurer, and inspire others to reflect on their own journeys through the world.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nView the tutorial for this template (+ download link)"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint\nThe paper suggests the method to visualize 4D compositional data on a 2D canvas. My contribution is general polishing of manuscript, creating 3D interactive figures and animation, and development of R package (planned)."
+  },
+  {
+    "objectID": "projects/index.html#lossless-visualization-of-4d-compositional-data-on-a-2d-canvas",
+    "href": "projects/index.html#lossless-visualization-of-4d-compositional-data-on-a-2d-canvas",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint\nThe paper suggests the method to visualize 4D compositional data on a 2D canvas. My contribution is general polishing of manuscript, creating 3D interactive figures and animation, and development of R package (planned)."
+  },
+  {
+    "objectID": "projects/index.html#r-package-metabmc",
+    "href": "projects/index.html#r-package-metabmc",
+    "title": "Projects",
+    "section": "R package “metabmc”",
+    "text": "R package “metabmc”\nThe package implements meta-uncertainty quantification of posterior model probabilities for Bayesian models. Check the project website for more detail. The development is still in progress and will be published in near future."
+  },
+  {
+    "objectID": "projects/index.html#r-package-for-bayesian-proxy-structural-var",
+    "href": "projects/index.html#r-package-for-bayesian-proxy-structural-var",
+    "title": "Projects",
+    "section": "R package for Bayesian proxy structural VAR",
+    "text": "R package for Bayesian proxy structural VAR\nThe package implements Bayesian vector autoregressive regression model with proxy variables for structural shocks in economy. The development is still in progress and will be published in near future."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Yuga Hikida",
+    "section": "",
+    "text": "Twitter\n  \n  \n    \n     Github\n  \n  \n    \n     LinkedIn\n  \n  \n    \n      Google Scholar\n  \n  \n    \n     Email\n  \n\n\n\n\nYuga Hikida\nI am a master student in Econometrics at University Alliance Ruhr.\nI am actively looking for funded Ph.D position in Bayesian statistics and machine learning starting in winter 2024. Please reach me out if you think there might be a fit yuga.hikida@gmail.com."
+  }
+]

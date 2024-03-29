@@ -1,0 +1,31 @@
+---
+title: Projects
+---
+
+## Lossless Visualization of 4D Compositional Data on a 2D Canvas
+
+<!-- <img src="project_1_banner.png" style="height: 100%; width: 100%; object-fit: contain" onclick="window.open('https://arxiv.org/abs/2210.07278', 'blank');"/> -->
+
+<!-- <a href="https://arxiv.org/abs/2210.07278" target="_blank">arXiv Preprint</a> | <a href="https://github.com/marvinschmitt/MetaUncertaintyPaper" target="_blank">Code</a><br> -->
+<a href="https://arxiv.org/abs/2403.11141" target="_blank">arXiv Preprint</a>
+
+The paper suggests the method to visualize 4D compositional data on a 2D canvas. My contribution is general polishing of manuscript, creating 3D interactive figures and animation, and development of R package (planned).
+
+----
+
+## R package "metabmc"
+
+The package implements meta-uncertainty quantification of posterior model probabilities
+for Bayesian models. Check [the project website](https://meta-uncertainty.github.io) for more detail. The development is still in progress and will be published in near future.
+
+----
+
+## R package for Bayesian proxy structural VAR
+
+The package implements Bayesian vector autoregressive regression model with proxy
+variables for structural shocks in economy. The development is still in progress 
+and will be published in near future.
+
+
+
+
