@@ -103,6 +103,7 @@ $btn-code-copy-color-active: $orange !default;
         text-align: center;
         width: 100%;
         min-height: 2em;
+        font-size: 12px;
     }
 
     @media (min-width: map-get($grid-breakpoints, md)) {
