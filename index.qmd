@@ -28,7 +28,7 @@ about:
 
 I am a master student in Econometrics at [University Alliance Ruhr](https://www.econometrics.ruhr/).
 
-I am actively looking for funded Ph.D position in Bayesian statistics and 
+I am looking for funded Ph.D position in Bayesian statistics / 
 machine learning starting in winter 2024. Please reach me out if you think 
 there might be a fit 
 [yuga.hikida@gmail.com](mailto:yuga.hikida@gmail.com).

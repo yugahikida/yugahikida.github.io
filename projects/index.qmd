@@ -9,22 +9,30 @@ title: Projects
 <!-- <a href="https://arxiv.org/abs/2210.07278" target="_blank">arXiv Preprint</a> | <a href="https://github.com/marvinschmitt/MetaUncertaintyPaper" target="_blank">Code</a><br> -->
 <a href="https://arxiv.org/abs/2403.11141" target="_blank">arXiv Preprint</a>
 
-The paper suggests the method to visualize 4D compositional data on a 2D canvas. My contribution is general polishing of manuscript, creating 3D interactive figures and animation, and development of R package (planned).
+The paper suggests the method to visualize 4D compositional data on a 2D canvas.
+This can be used to visualize data such as posterior model probabilities for 4 
+models on (2D) paper without loss of information and distortion. My contributions 
+are general polishing of manuscript, creating 3D interactive figures and 
+animation, and development of R package (planned).
 
 ----
 
 ## R package "metabmc"
 
-The package implements meta-uncertainty quantification of posterior model probabilities
-for Bayesian models. Check [the project website](https://meta-uncertainty.github.io) for more detail. The development is still in progress and will be published in near future.
+The package implements meta-uncertainty quantification for Bayesian model 
+comparison. This can be used to evaluate trustworthiness of posterior model 
+probabilities, which tend to take extreme values. Check 
+[the project website](https://meta-uncertainty.github.io) for more detail.
+The development is still in progress and will be published in near future.
 
 ----
 
 ## R package for Bayesian proxy structural VAR
 
-The package implements Bayesian vector autoregressive regression model with proxy
-variables for structural shocks in economy. The development is still in progress 
-and will be published in near future.
+The package implements Bayesian vector autoregressive model with proxy variables 
+for structural shocks in economy. This can help agents like government and central
+bank to make decisions, considering the expected effects in the system of economy. 
+The development is still in progress and will be published in near future.
 
 
 
