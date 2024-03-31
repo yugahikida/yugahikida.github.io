@@ -35,10 +35,38 @@
     "text": "R package for Bayesian proxy structural VAR\nThe package implements Bayesian vector autoregressive model with proxy variables for structural shocks in economy. This can help agents like government and central bank to make decisions, considering the expected effects in the system of economy. The development is still in progress and will be published in near future."
   },
   {
+    "objectID": "japanese/index.html",
+    "href": "japanese/index.html",
+    "title": "疋田 悠河 : HIKIDA, Yuga",
+    "section": "",
+    "text": "疋田 悠河 : HIKIDA, Yuga\nドイツで計量経済学修士。主にベイズ統計学/機械学習に興味があります。\n\n\n来歴\n2023- リサーチアシスタント @ドルトムント工科大学\n計量経済学、計算機統計学の2つのラボで働いています。主にRパッケージの開発に携わっています。\n2021-2023 DSインターン @Rejoui\nログデータを使った顧客の行動解析や、医療分野のテキストマイニングに携わりました。\n\n\n\n教育\n2022- 計量経済学修士 @独ルール大学連合\n2018-2022 経済学学士 @英サセックス大学"
+  },
+  {
+    "objectID": "japanese/index.html#来歴",
+    "href": "japanese/index.html#来歴",
+    "title": "疋田 悠河：HIKIDA, Yuga",
+    "section": "来歴",
+    "text": "来歴\n2023- リサーチアシスタント @ドルトムント工科大学\n計量経済学、計算機統計学の2つのラボで働いています。主にRパッケージの開発に携わっています。\n2021-2023 DSインターン @Rejoui\nログデータを使った顧客の行動解析や、医療分野のテキストマイニングに携わりました。"
+  },
+  {
+    "objectID": "japanese/index.html#教育",
+    "href": "japanese/index.html#教育",
+    "title": "疋田 悠河：HIKIDA, Yuga",
+    "section": "教育",
+    "text": "教育\n2022- 計量経済学修士 @独ルール大学連合\n2018-2022 経済学学士 @英サセックス大学"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Yuga Hikida",
     "section": "",
     "text": "Twitter\n  \n  \n    \n     Github\n  \n  \n    \n     LinkedIn\n  \n  \n    \n      Google Scholar\n  \n  \n    \n     Email\n  \n\n\n\n\nYuga Hikida\nI am a master student in Econometrics at University Alliance Ruhr.\nI am looking for funded Ph.D position in Bayesian statistics / machine learning starting in winter 2024. Please reach me out if you think there might be a fit yuga.hikida@gmail.com."
+  },
+  {
+    "objectID": "japanese/index.html#ドイツで計量経済学修士主にベイズ統計学機械学習に興味があります",
+    "href": "japanese/index.html#ドイツで計量経済学修士主にベイズ統計学機械学習に興味があります",
+    "title": "疋田 悠河：HIKIDA, Yuga",
+    "section": "ドイツで計量経済学修士。主にベイズ統計学/機械学習に興味があります。",
+    "text": "ドイツで計量経済学修士。主にベイズ統計学/機械学習に興味があります。"
   }
 ]
