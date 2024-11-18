@@ -5,40 +5,48 @@ website:
   title: "Yuga Hikida"          # Your name
   description: ""   # A brief slogan (optional)
   image: img/my_image.jpg
-  favicon: img/favicon.jpeg
+  favicon: img/favicon.png
   
   # start of the navigation bar at the top of the website
   navbar:
     pinned: true
+    collapse-below: "md"
     # logo: /img/favicon.png
-    
     # your sub-pages
     left:
       - text: "Projects"
         href: projects/index.qmd
       - text: "CV"
         href: cv/index.qmd
-      - text: "Japanese"
+      - text: "<span style='font-family: Meiryo;'>日本語</span>"
         href: japanese/index.qmd
-    # your social media handles
     right:
-      # - icon: folder-symlink
-      #   href: https://www.marvinschmitt.com/blog/website-tutorial-quarto/
-      - icon: twitter
-        href: https://twitter.com/yugahikida
+      - text: "{{< iconify simple-icons bluesky >}}"
+        href: https://bsky.app/profile/yugahikida.bsky.social
       - icon: github
         href: https://github.com/yugahikida
       - icon: linkedin
         href: https://www.linkedin.com/in/yugahikida
-      - text: "{{< fa graduation-cap >}}"
-        aria-label: google-scholar
+      - icon: mortarboard-fill
         href: https://scholar.google.com/citations?user=jvKJHacAAAAJ
       - icon: envelope
-        aria-label: email
-        href: "mailto:yuga.hikida@gmail.com"  
+        href: mailto:yuga.hikida@gmail.com
+    # right:
+    #   - icon: box-arrow-up-right
+    #     menu:
+    #     - text: "Twitter"
+    #       href: https://twitter.com/yugahikida
+    #     - text: "GitHub"
+    #       href: https://github.com/yugahikida
+    #     - text: "LinkedIn"
+    #       href: https://www.linkedin.com/in/yugahikida
+    #     - text: "Google Scholar"
+    #       # aria-label: google-scholar
+    #       href: https://scholar.google.com/citations?user=jvKJHacAAAAJ
+    #     - text: "Email"
+    #       aria-label: email
+    #       href: "mailto:yuga.hikida@gmail.com"
   
-  
-
 # Don't touch unless you know what you are doing :) ------------
   search: 
     location: navbar
@@ -64,13 +72,14 @@ execute:
 
 format:
   html:
-    fontsize: 1.1em
-    theme: 
-      - pulse
-      - html/styles.scss
+    fontsize: 1.2em
+    theme:
+      light: [flatly, html/styles-light.scss]
+      dark: [darkly, html/styles-dark.scss]
     toc: false
     code-link: true
     anchor-sections: true
     fig-cap-location: margin
     reference-location: margin
     footnotes-hover: true
+    page-layout: article

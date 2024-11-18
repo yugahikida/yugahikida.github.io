@@ -26,9 +26,9 @@ $green:   #118230 !default;
 $teal:    #068194 !default;
 $cyan:    #3093CF !default;
 
-$darkergreen: #26363F;
+$iceblue: #BCDFFB;
 
-$primary:   $darkergreen !default;
+$primary:   $gray-800 !default;
 $secondary: $gray-700 !default;
 $success:   $green !default;
 $info:      $cyan !default;
@@ -38,15 +38,14 @@ $light:     $gray-400 !default;
 $dark:      $black !default;
 
 
-
 // Links
-$link-color: $teal !default;
+$link-color: $iceblue !default;
 $link-decoration: none !default;
 $link-hover-color: $red !default;
 $link-hover-decoration: underline !default;
 
 // Footer
-$footer-bg: $white !default;
+$footer-bg: $gray-800 !default;
 $footer-fg: $gray-500 !default;
 $footer-hl: $gray-500 !default;
 

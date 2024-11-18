@@ -1,35 +1,70 @@
 ---
+title: "Yuga Hikida"
+subtitle: <small><small>Doctoral Researcher in Probabilistic ML</small></small>
 about:
-  template: jolla
+  template: trestles
+  image-width: 15em
+  image-shape: round
   id: about-block
   image: "img/my_image.jpg"
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/yugahikida
-    - icon: github
-      text: Github
-      href: https://github.com/yugahikida
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/yugahikida
-    - icon: google-scholar
-      text: "{{< fa graduation-cap >}} Google Scholar"
-      href: https://scholar.google.com/citations?user=jvKJHacAAAAJ
+    - text: "{{< iconify fa6-brands bluesky >}} Bluesky"
+      aria-label: bluesky
+      href: https://bsky.app/profile/yugahikida.bsky.social
     - icon: envelope
       text: Email
-      href: "mailto:yuga.hikida@gmail.com"  
+      href: "mailto:yuga.hikida@gmail.com"
+    # - icon: github
+    #   text: Github
+    #   href: https://github.com/yugahikida
+    # - icon: linkedin
+    #   text: LinkedIn
+    #   href: https://www.linkedin.com/in/yugahikida
+    # - icon: google-scholar
+    #   text: "{{< fa graduation-cap >}} Google Scholar"
+    #   href: https://scholar.google.com/citations?user=jvKJHacAAAAJ
+    
+format:
+  html:
+    page-layout: full
 ---
-
 ::: {#about-block}
+From 2025, I will be a  doctoral researcher in the [Probabilistic Machine Learning group](https://research.cs.aalto.fi/pml/) 
+at Aalto University, working on compute-efficient and robust 
+simulation-based inference with [Ayush Bharti](https://bharti-ayush.github.io/).
+
+Prior to that, I was a master student in Econometrics at TU Dortmund University, 
+where I worked as a research assistant on the development of R packages for 
+Bayesian model comparison (with [Marvin Schmitt](https://www.marvinschmitt.com/)) 
+and Bayesian vector autoregression (with [Jan Prüser](https://sites.google.com/view/janprueser/welcome)),
+and wrote thesis on amortized Bayesian experimental design under the supervision of Marvin Schmitt,
+[Desi Ivanova](https://desirivanova.com/), and [Paul Bürkner](https://paulbuerkner.com/).
+
+Click [here](cv/index.qmd) to see my CV.
+---
+::::{.grid}
+::: {.g-col-12 .g-col-sm-6}
+#### Interests
+Bayesian Statistics <br>
+Bayesian Experimental Design <br>
+Simulation-based Inference <br>
+Amortized Inference <br>
+Likelihood-free Inference
 :::
+::: {.g-col-12 .g-col-sm-6}
+#### Education
+::: {.smaller}
+PhD in Statistical Machine Learning<br>
+<small>Aalto University, Finland, 2025-2028</small>
 
-# Yuga Hikida
+MSc in Econometrics<br>
+<small>TU Dortmund, Germany, 2022-2024</small>
 
-I am a master student in Econometrics at [University Alliance Ruhr](https://www.econometrics.ruhr/).
+BSc in Economics<br>
+<small>University of Sussex, UK, 2018-2022</small>
+:::
+:::
+::::
 
-I am looking for funded Ph.D position in Bayesian statistics / 
-machine learning starting in winter 2024. Please reach out to me if you think 
-there might be a fit 
-[yuga.hikida@gmail.com](mailto:yuga.hikida@gmail.com).
+:::
 

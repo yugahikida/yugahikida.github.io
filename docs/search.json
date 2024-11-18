@@ -37,15 +37,15 @@
   {
     "objectID": "japanese/index.html",
     "href": "japanese/index.html",
-    "title": "疋田 悠河 : HIKIDA, Yuga",
+    "title": "疋田 悠河",
     "section": "",
-    "text": "疋田 悠河 : HIKIDA, Yuga\nドイツで計量経済学修士。主にベイズ統計学/機械学習に興味があります。\n\n\n来歴\n2023- リサーチアシスタント @ドルトムント工科大学\n計量経済学、計算機統計学の2つのラボで働いています。主にRパッケージの開発に携わっています。\n2021-2023 DSインターン @Rejoui\nログデータを使った顧客の行動解析や、医療分野のテキストマイニングに携わりました。\n\n\n\n教育\n2022- 計量経済学修士 @独ルール大学連合\n2018-2022 経済学学士 @英サセックス大学\n\n詳しい情報は英語ページをご覧ください。\nプロジェクト一覧  履歴書  コンタクト"
+    "text": "疋田 悠河\nフィンランドで機械学習博士課程。主にベイズ統計学/機械学習に興味があります。\n\n\n来歴\n2025- 博士研究員 @アアルト大学PMLグループ  シミュレーションに基づく統計的推論、尤度フリー推論\n2023-2024 リサーチアシスタント @ドルトムント工科大学統計学部  Rパッケージの開発、償却推論\n2021-2023 DSインターン @Rejoui  ログデータを使った顧客の行動解析、医療分野のテキストマイニング\n\n\n\n興味\nベイズ統計学  ベイズ実験計画  シミュレーションに基づく統計的推論  償却推論  尤度フリー推論\n\n\n教育\n\n2025-2028 機械学習博士   アアルト大学, フィンランド \n2022-2024 計量経済学修士   ドルトムント工科大学, ドイツ \n2018-2022 経済学学士   サセックス大学, イギリス \n\n\n\n\n詳しい情報は英語ページをご覧ください。\nプロジェクト一覧  履歴書  コンタクト"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Yuga Hikida",
     "section": "",
-    "text": "Twitter\n  \n  \n    \n     Github\n  \n  \n    \n     LinkedIn\n  \n  \n    \n      Google Scholar\n  \n  \n    \n     Email\n  \n\n\n\n\nYuga Hikida\nI am a master student in Econometrics at University Alliance Ruhr.\nI am looking for funded Ph.D position in Bayesian statistics / machine learning starting in winter 2024. Please reach out to me if you think there might be a fit yuga.hikida@gmail.com."
+    "text": "Bluesky\n  \n  \n    \n     Email\n  \n\n  \n  \nFrom 2025, I will be a doctoral researcher in the Probabilistic Machine Learning group at Aalto University, working on compute-efficient and robust simulation-based inference with Ayush Bharti.\nPrior to that, I was a master student in Econometrics at TU Dortmund University, where I worked as a research assistant on the development of R packages for Bayesian model comparison (with Marvin Schmitt) and Bayesian vector autoregression (with Jan Prüser), and wrote thesis on amortized Bayesian experimental design under the supervision of Marvin Schmitt, Desi Ivanova, and Paul Bürkner.\nClick here to see my CV.\n\n\n\nInterests\nBayesian Statistics  Bayesian Experimental Design  Simulation-based Inference  Amortized Inference  Likelihood-free Inference\n\n\nEducation\n\nPhD in Statistical Machine Learning Aalto University, Finland, 2025-2028\nMSc in Econometrics TU Dortmund, Germany, 2022-2024\nBSc in Economics University of Sussex, UK, 2018-2022"
   }
 ]
