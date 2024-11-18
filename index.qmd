@@ -29,7 +29,7 @@ format:
     page-layout: full
 ---
 ::: {#about-block}
-From 2025, I will be a  doctoral researcher in the [Probabilistic Machine Learning group](https://research.cs.aalto.fi/pml/) 
+From 2025, I will be a doctoral researcher in the [Probabilistic Machine Learning group](https://research.cs.aalto.fi/pml/) 
 at Aalto University, working on compute-efficient and robust 
 simulation-based inference with [Ayush Bharti](https://bharti-ayush.github.io/).
 
@@ -54,7 +54,7 @@ Likelihood-free Inference
 ::: {.g-col-12 .g-col-sm-6}
 #### Education
 ::: {.smaller}
-PhD in Statistical Machine Learning<br>
+PhD in Probabilistic ML<br>
 <small>Aalto University, Finland, 2025-2028</small>
 
 MSc in Econometrics<br>
