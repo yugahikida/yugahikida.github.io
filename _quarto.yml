@@ -9,7 +9,7 @@ website:
   
   # start of the navigation bar at the top of the website
   navbar:
-    pinned: true
+    pinned: false
     collapse-below: "md"
     # logo: /img/favicon.png
     # your sub-pages
@@ -72,7 +72,7 @@ execute:
 
 format:
   html:
-    fontsize: 1.2em
+    fontsize: 1.1em
     theme:
       light: [flatly, html/styles-light.scss]
       dark: [darkly, html/styles-dark.scss]
