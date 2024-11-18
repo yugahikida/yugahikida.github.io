@@ -72,7 +72,7 @@ execute:
 
 format:
   html:
-    fontsize: 1.1em
+    fontsize: 1.0em
     theme:
       light: [flatly, html/styles-light.scss]
       dark: [darkly, html/styles-dark.scss]
