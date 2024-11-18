@@ -21,15 +21,20 @@ website:
       - text: "<span style='font-family: Meiryo;'>日本語</span>"
         href: japanese/index.qmd
     right:
-      - text: "{{< iconify simple-icons bluesky >}}"
+      - text: "{{< iconify fa6-brands bluesky >}}"
+        aria-label: bluesky
         href: https://bsky.app/profile/yugahikida.bsky.social
-      - icon: github
+      - text:  "{{< iconify fa6-brands github >}}"
+        aria-label: github
         href: https://github.com/yugahikida
-      - icon: linkedin
+      - text: "{{< iconify fa6-brands linkedin >}}"
+        aria-label: linkedin
         href: https://www.linkedin.com/in/yugahikida
-      - icon: mortarboard-fill
+      - text: "{{< fa graduation-cap >}}"
+        aria-label: google-scholar
         href: https://scholar.google.com/citations?user=jvKJHacAAAAJ
-      - icon: envelope
+      - text: "{{< fa envelope >}}"
+        aria-label: email
         href: mailto:yuga.hikida@gmail.com
     # right:
     #   - icon: box-arrow-up-right
@@ -72,7 +77,7 @@ execute:
 
 format:
   html:
-    fontsize: 1.0em
+    fontsize: 1.05em
     theme:
       light: [flatly, html/styles-light.scss]
       dark: [darkly, html/styles-dark.scss]
