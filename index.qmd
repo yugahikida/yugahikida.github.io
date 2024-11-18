@@ -33,8 +33,8 @@ From 2025, I will be a doctoral researcher in the [Probabilistic Machine Learnin
 at Aalto University, working on compute-efficient and robust 
 simulation-based inference with [Ayush Bharti](https://bharti-ayush.github.io/).
 
-Prior to that, I was a master student in Econometrics at Department of Statistics,
-TU Dortmund University, 
+Prior to that, I was a master student in Econometrics at [Department of Statistics,
+TU Dortmund University](https://statistik.tu-dortmund.de/en/department/), 
 where I worked as a research assistant on the development of R packages for 
 Bayesian model comparison (with [Marvin Schmitt](https://www.marvinschmitt.com/)) 
 and Bayesian vector autoregression (with [Jan Prüser](https://sites.google.com/view/janprueser/welcome)).
