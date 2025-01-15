@@ -29,9 +29,9 @@ format:
     page-layout: full
 ---
 ::: {#about-block}
-From 2025, I will be a doctoral researcher in the [Probabilistic Machine Learning group](https://research.cs.aalto.fi/pml/) 
+I am a doctoral researcher in the [Probabilistic Machine Learning group](https://research.cs.aalto.fi/pml/) 
 at Aalto University, working on compute-efficient and robust 
-simulation-based inference with [Ayush Bharti](https://bharti-ayush.github.io/).
+simulation-based inference, advised by [Ayush Bharti](https://bharti-ayush.github.io/) (Aalto) and [François-Xavier Briol](https://fxbriol.github.io/) (UCL).
 
 Prior to that, I was a master student in Econometrics at [Department of Statistics,
 TU Dortmund University](https://statistik.tu-dortmund.de/en/department/), 
