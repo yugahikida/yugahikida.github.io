@@ -56,7 +56,7 @@ Likelihood-free Inference
 ::: {.g-col-12 .g-col-sm-6}
 #### Education
 ::: {.smaller}
-PhD in Probabilistic Machine Learning <br>
+PhD in Computer Science<br>
 <small>Aalto University, Finland, 2025-2028</small>
 
 MSc in Econometrics<br>
