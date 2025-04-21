@@ -6,9 +6,9 @@ author: "Yuga Hikida"
 date: "4.21.2025"
 categories:
   - SBI
-editor: 
-  markdown: 
-    wrap: 72
+comments:
+  utterances:
+    repo: yugahikida/yugahikida.github.io
 ---
 
 Normalising flow is commonly used for density estimation in generative
@@ -38,16 +38,15 @@ of variable formula (without any intractable integral involved)
 $$
 p(x) = p_z(g^{-1}(x)) \left|\det  \frac{\partial g^{-1}(x)}{\partial x} \right|
 :=  p_z(f(x)) \left|\det  \frac{\partial f(x)}{\partial x} \right|
-$$ 
-We just defined $f := g^{-1}$. $g$ is referred as *generative* path
+$$ We just defined $f := g^{-1}$. $g$ is referred as *generative* path
 because we try to generate $x$ from a simple distribution $p_z$, whereas
 $f$ is referred as *normalising* path because we try to degenerate $x$
 back to $z \sim p_z$, where $p_z$ is usually normal distribution.
 
-$f$ is usually parameterized by neural network to maximise likelihood $p(x)$. $f$
-is usually chosen such that the determinant of the Jacobian is easy to
-calculate. Training and evaluation of density requires normalising path
-while sampling requires generative path as
+$f$ is usually parameterized by neural network to maximise likelihood
+$p(x)$. $f$ is usually chosen such that the determinant of the Jacobian
+is easy to calculate. Training and evaluation of density requires
+normalising path while sampling requires generative path as
 
 $$
 x \sim p(x)
@@ -55,7 +54,8 @@ x \sim p(x)
 z \sim p_z(z), x = g(z)
 $$
 
-People often care about $f$ because fast evaluation of $f$ is needed for fast training. If we need fast sampling, then $g$ is cared.
+People often care about $f$ because fast evaluation of $f$ is needed for
+fast training. If we need fast sampling, then $g$ is cared.
 
 In SBI, coupling flow and autoregressive flow is commonly used.
 
@@ -69,19 +69,19 @@ y^A &= \mathbf{h}_\phi(x^A) = [h_{\phi_1}(x_1),...,h_{\phi_d}(x_d)]  \\
 y^B &= x^B \\
 y &= [y^A, y^B]
 \end{align}
-$$ 
+$$
 
 Firstly, $x$ is split into two dimension such that
 $x^A \in \mathbb{R}^d, x^B \in \mathbb{R}^{D - d}$. Then one part is fed
 into NN: $\mathbb{R}^{D - d} \rightarrow \mathbb{R}^k$ to learn
 parameter $\phi_i \in  \mathbb{R}^k$. The NN is referred as
 *conditioner*. This $\phi$ is then coupled with another part $x^A$
-through invertible and differentiable function $\mathbf{h}$ called *transformer* or
-*coupling function*. $k$ depends on the choice of coupling function.
-Note that transformer is nothing to do with the 'query-key-value'
-transformers. Coupling function is usually applied element-wise. This
-transformed $x^A$ is then concatenated with $x^B$, which
-gives output $y$. Its inverse is given by
+through invertible and differentiable function $\mathbf{h}$ called
+*transformer* or *coupling function*. $k$ depends on the choice of
+coupling function. Note that transformer is nothing to do with the
+'query-key-value' transformers. Coupling function is usually applied
+element-wise. This transformed $x^A$ is then concatenated with $x^B$,
+which gives output $y$. Its inverse is given by
 
 $$
 \begin{align}
@@ -96,8 +96,8 @@ permutation such that all the dimensions $i = 1,...,D$ are interacted to
 each other. The determinant of Jacobian is given by
 $\prod_{i=1}^d \frac{\partial h_{\phi_i}(x_i)}{\partial x_i}$.
 
-In NPE, $x \leftarrow \theta$ and the conditioner is also conditioned on data as
-$\phi = NN(\theta^B, \mathcal{D})$. In NLE,
+In NPE, $x \leftarrow \theta$ and the conditioner is also conditioned on
+data as $\phi = NN(\theta^B, \mathcal{D})$. In NLE,
 $x \leftarrow \mathcal{D}$ and $\phi = NN(\mathcal{D}^B, \theta)$
 
 ## Autoregressive flow
@@ -108,17 +108,18 @@ $$
 \phi_i &= NN(x_{1:i-1}) \\
 y_i &= h_{\phi_i}(x_i)\\
 \end{align}
-$$ 
+$$
 
-where $\phi_1$ is constant. This is very similar to coupling flow
-except that instead of splitting dimensions into half, dimension is
-split in autoregressive manners into $x_i$ and $x_{1:i-1}$ mutiple
-times. In practice, this coupling functions can be implemented without
-recursion using masking.
+where $\phi_1$ is constant. This is very similar to coupling flow except
+that instead of splitting dimensions into half, dimension is split in
+autoregressive manners into $x_i$ and $x_{1:i-1}$ mutiple times. In
+practice, this coupling functions can be implemented without recursion
+using masking.
 
-In NPE, $\phi_1 = NN(\mathcal{D}), \phi_i = NN(\theta_{1:i-1}, \mathcal{D}), 1 < i < D$. In
-NLE, $\phi_1 = NN(\theta),\phi_i = NN(\mathcal{D}_{1:i-1}, \theta), 1 < i < D$
-
+In NPE,
+$\phi_1 = NN(\mathcal{D}), \phi_i = NN(\theta_{1:i-1}, \mathcal{D}), 1 < i < D$.
+In NLE,
+$\phi_1 = NN(\theta),\phi_i = NN(\mathcal{D}_{1:i-1}, \theta), 1 < i < D$
 
 ## Coupling function
 
@@ -128,7 +129,7 @@ $$
 h_{\phi_{i}}(x_i) = \alpha_i x_i + \beta_i, \quad \phi_i = (\alpha_i, \beta_i)
 $$
 
-where $\alpha_i > 0, \beta_i \in \mathbb{R}$. 
+where $\alpha_i > 0, \beta_i \in \mathbb{R}$.
 <!-- Most paper uses notation -->
 <!-- using element wise multiplication: $y = \alpha \odot x + \beta$. -->
 
@@ -142,18 +143,29 @@ and to $z$ at final. Monotonicity is necessary for bijectivity.
 \[2\]](images/Screenshot%202025-04-21%20at%2019.11.44.png){width="500"}
 
 ## Bibliography
-[1] I. Kobyzev, S. J. D. Prince and M. A. Brubaker, "Normalizing Flows: An Introduction and Review of Current Methods," in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 43, no. 11, pp. 3964-3979.
 
-[2] Durkan, C., Bekasov, A., Murray, I., & Papamakarios, G. (2019). Neural Spline Flows. Advances in Neural Information Processing Systems, abs/1906.04032. https://proceedings.neurips.cc/paper/2019/hash/7ac71d433f282034e088473244df8c02-Abstract.html
+\[1\] I. Kobyzev, S. J. D. Prince and M. A. Brubaker, "Normalizing
+Flows: An Introduction and Review of Current Methods," in IEEE
+Transactions on Pattern Analysis and Machine Intelligence, vol. 43, no.
+11, pp. 3964-3979.
 
-[3] Radev, S. T., Mertens, U. K., Voss, A., Ardizzone, L., & Kothe, U. (2022). BayesFlow: Learning Complex Stochastic Models With Invertible Neural Networks. IEEE Transactions on Neural Networks and Learning Systems, 33(4), 1452–1466.
+\[2\] Durkan, C., Bekasov, A., Murray, I., & Papamakarios, G. (2019).
+Neural Spline Flows. Advances in Neural Information Processing Systems,
+abs/1906.04032.
+https://proceedings.neurips.cc/paper/2019/hash/7ac71d433f282034e088473244df8c02-Abstract.html
 
+\[3\] Radev, S. T., Mertens, U. K., Voss, A., Ardizzone, L., & Kothe, U.
+(2022). BayesFlow: Learning Complex Stochastic Models With Invertible
+Neural Networks. IEEE Transactions on Neural Networks and Learning
+Systems, 33(4), 1452–1466.
 
 ## Appendix
 
 ### Dual coupling
-Sometimes, one block of coupling is defined as two coupling as in [3] such that 
-both split is transformed by coupling function in one unit of coupling.
+
+Sometimes, one block of coupling is defined as two coupling as in \[3\]
+such that both split is transformed by coupling function in one unit of
+coupling.
 
 $$
 \begin{align}
@@ -164,20 +176,22 @@ y^A &= \mathbf{h}_{\phi_1}(x^A) \\
 y^B &= \mathbf{h}_{\phi_2}(x^B) \\
 y &= [y^A, y^B]
 \end{align}
-$$
-This is same as applying single coupling flow followed by permutation, which swap $x^A$ and $x^B$ and applying another coupling flow.
+$$ This is same as applying single coupling flow followed by
+permutation, which swap $x^A$ and $x^B$ and applying another coupling
+flow.
 
 ### When $D = 1$
 
-In generative model $x$ is usually something high dimensional like image. But in SBI, $D$ could be 1. Coupling flow could be applied in such case although there
-would be no 'coupling' anymore. For example in NPE, if $\theta \in \mathbb{R}$ and consider only one coupling, then we have
+In generative model $x$ is usually something high dimensional like
+image. But in SBI, $D$ could be 1. Coupling flow could be applied in
+such case although there would be no 'coupling' anymore. For example in
+NPE, if $\theta \in \mathbb{R}$ and consider only one coupling, then we
+have
 
 $$
 \begin{align}
 \phi &= NN(\mathcal{D}) \\
 z &= \mathbf{h}_{\phi}(\theta)
 \end{align}
-$$
-In this case, naturally, coupling flow is same as autoregressive flow given same 
-conditioner and coupling function.
-
+$$ In this case, naturally, coupling flow is same as autoregressive flow
+given same conditioner and coupling function.
