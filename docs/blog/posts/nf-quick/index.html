@@ -262,7 +262,7 @@ y_i &amp;= h_{\phi_i}(x_i)\\
 \end{align}
 \]</span></p>
 <p>where <span class="math inline">\(\phi_1\)</span> is constant. This is very similar to coupling flow except that instead of splitting dimensions into half, dimension is split in autoregressive manners into <span class="math inline">\(x_i\)</span> and <span class="math inline">\(x_{1:i-1}\)</span> mutiple times. In practice, this coupling functions can be implemented without recursion using masking.</p>
-<p>In NPE, <span class="math inline">\(\phi_1 = NN(\mathcal{D}), \phi_i = NN(\theta_{1:i-1}, \mathcal{D}), 1 &lt; i &lt; D\)</span>. In NLE, <span class="math inline">\(\phi_1 = NN(\theta),\phi_i = NN(\mathcal{D}_{1:i-1}, \theta), 1 &lt; i &lt; D\)</span></p>
+<p>In NPE, <span class="math inline">\(\phi_1 = NN(\mathcal{D}), \phi_i = NN(\theta_{1:i-1}, \mathcal{D}), 1 &lt; i \leq D\)</span>. In NLE, <span class="math inline">\(\phi_1 = NN(\theta),\phi_i = NN(\mathcal{D}_{1:i-1}, \theta), 1 &lt; i \leq D\)</span></p>
 </section>
 <section id="coupling-function" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="coupling-function">Coupling function</h2>
@@ -304,7 +304,8 @@ y^A &amp;= \mathbf{h}_{\phi_1}(x^A) \\
 y^B &amp;= \mathbf{h}_{\phi_2}(x^B) \\
 y &amp;= [y^A, y^B]
 \end{align}
-\]</span> This is same as applying single coupling flow followed by permutation, which swap <span class="math inline">\(x^A\)</span> and <span class="math inline">\(x^B\)</span> and applying another coupling flow.</p>
+\]</span></p>
+<p>This is same as applying single coupling flow followed by permutation, which swap <span class="math inline">\(x^A\)</span> and <span class="math inline">\(x^B\)</span> and applying another coupling flow.</p>
 </section>
 <section id="when-d-1" class="level3">
 <h3 class="anchored" data-anchor-id="when-d-1">When <span class="math inline">\(D = 1\)</span></h3>

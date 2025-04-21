@@ -117,9 +117,9 @@ practice, this coupling functions can be implemented without recursion
 using masking.
 
 In NPE,
-$\phi_1 = NN(\mathcal{D}), \phi_i = NN(\theta_{1:i-1}, \mathcal{D}), 1 < i < D$.
+$\phi_1 = NN(\mathcal{D}), \phi_i = NN(\theta_{1:i-1}, \mathcal{D}), 1 < i \leq D$.
 In NLE,
-$\phi_1 = NN(\theta),\phi_i = NN(\mathcal{D}_{1:i-1}, \theta), 1 < i < D$
+$\phi_1 = NN(\theta),\phi_i = NN(\mathcal{D}_{1:i-1}, \theta), 1 < i \leq D$
 
 ## Coupling function
 
@@ -176,7 +176,9 @@ y^A &= \mathbf{h}_{\phi_1}(x^A) \\
 y^B &= \mathbf{h}_{\phi_2}(x^B) \\
 y &= [y^A, y^B]
 \end{align}
-$$ This is same as applying single coupling flow followed by
+$$ 
+
+This is same as applying single coupling flow followed by
 permutation, which swap $x^A$ and $x^B$ and applying another coupling
 flow.
 
