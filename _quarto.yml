@@ -18,6 +18,8 @@ website:
         href: projects/index.qmd
       - text: "CV"
         href: cv/index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
       - text: "<span style='font-family: Meiryo;'>日本語</span>"
         href: japanese/index.qmd
     right:

@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Yuga Hikida">
+<meta name="dcterms.date" content="2025-04-21">
 
-<title>Yuga Hikida</title>
+<title>Quick note on Normalising flow for SBI – Yuga Hikida</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +25,28 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./img/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../img/favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-md " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Yuga Hikida</span>
     </a>
   </div>
@@ -92,19 +124,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./projects/index.html"> 
+    <a class="nav-link" href="../../../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv/index.html"> 
+    <a class="nav-link" href="../../../cv/index.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html"> 
+    <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./japanese/index.html"> 
+    <a class="nav-link" href="../../../japanese/index.html"> 
 <span class="menu-text"><span style="font-family: Meiryo;">日本語</span></span></a>
   </li>  
 </ul>
@@ -138,71 +170,155 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-
-
-
-<div class="quarto-about-trestles column-page">
-  <div class="about-entity">
-    <img src="img/my_image.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Yuga Hikida</h1>
-<p class="subtitle lead"><small><small>Doctoral Researcher in Probabilistic ML</small></small></p>
-</div>
-<div class="quarto-title-meta column-page">
+<h1 class="title">Quick note on Normalising flow for SBI</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">SBI</div>
   </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Yuga Hikida </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 21, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="https://bsky.app/profile/yugahikida.bsky.social" class="about-link" rel="" target="">
-     <span class="about-link-text"><iconify-icon role="img" inline="" icon="fa6-brands:bluesky" aria-label="Icon bluesky from fa6-brands Iconify.design set." title="Icon bluesky from fa6-brands Iconify.design set."></iconify-icon> Bluesky</span>
-  </a>
-  <a href="mailto:yuga.hikida@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><div id="about-block">
-<p>I am a doctoral researcher in the <a href="https://research.cs.aalto.fi/pml/">Probabilistic Machine Learning group</a> at Aalto University, working on Simulation-Based Inference (SBI), advised by <a href="https://bharti-ayush.github.io/">Ayush Bharti</a> (Aalto) and <a href="https://fxbriol.github.io/">François-Xavier Briol</a> (UCL).</p>
-<p>In many real-world problems arising in industry and science, the likelihood function is unavailable, which poses a major challenge to the application of traditional Bayesian inference. SBI overcomes this limitation by enabling Bayesian inference without direct access to the likelihood. My research focuses on two key aspects of SBI: (1) efficiency, aiming to reduce the number of required data, and (2) robustness, by detecting and/or mitigating the impact of model misspecification on inference quality.</p>
-<!-- Prior to that, I was a master student in Econometrics at [Department of Statistics, -->
-<!-- TU Dortmund University](https://statistik.tu-dortmund.de/en/department/),  -->
-<!-- where I worked as a research assistant on the development of R packages for  -->
-<!-- Bayesian model comparison (with [Marvin Schmitt](https://www.marvinschmitt.com/))  -->
-<!-- and Bayesian vector autoregression (with [Jan Prüser](https://sites.google.com/view/janprueser/welcome)). -->
-<!-- For my master's thesis, I worked on amortized Bayesian experimental design  -->
-<!-- for multiple candidate models under the supervision of Marvin Schmitt, -->
-<!-- [Desi Ivanova](https://desirivanova.com/), and [Paul Bürkner](https://paulbuerkner.com/). -->
-<p>Click <a href="./cv/index.html">here</a> to see my CV.</p>
-<hr>
-<div class="grid">
-<section id="interests" class="level4 g-col-12 g-col-sm-6">
-<h4 data-anchor-id="interests">Interests</h4>
-<p>Bayesian Experimental Design <br> Simulation-Based Inference <br> Amortized Inference <br></p>
+
+
+<p>Normalising flow is commonly used for density estimation in generative model. It is also used in Simulatoin-Based Inference (SBI) to estimate conditional density. Specifically, <span class="math inline">\(p(\theta | \mathcal{D})\)</span> for neural posterior estimation (NPE) and <span class="math inline">\(p(\mathcal{D} | \theta)\)</span> for neural likelihood estimation (NLE). In this post, I will quickly explain how normalizing flow can estimate density with some focus on the application in SBI.</p>
+<p>In generative model we are interested in estimating distribution of <span class="math inline">\(x \in \mathbb{R}^D\)</span> by integrating out latent variable <span class="math inline">\(z \in \mathbb{R}^D\)</span>, that is</p>
+<p><span class="math display">\[
+p(x) = \int p(x | z)p_z(z)dz
+\]</span></p>
+<p>The integral is usually intractable. In normalizing flow, we pick <span class="math inline">\(p_z(z)\)</span> to be a simple distirbution such as standard normal distribution <span class="math inline">\(N(0, I_D)\)</span>, and transform <span class="math inline">\(p_z(z)\)</span> with <span class="math inline">\(g: \mathbb{R}^D \rightarrow \mathbb{R}^D\)</span>. We pick <span class="math inline">\(g\)</span> to be diffeomorphism, that is, <span class="math inline">\(g\)</span> is 1. bijective, 2. differentiable, 3. its inverse is differentiable. This allows us to express <span class="math inline">\(p(x)\)</span> using change of variable formula (without any intractable integral involved)</p>
+<p><span class="math display">\[
+p(x) = p_z(g^{-1}(x)) \left|\det  \frac{\partial g^{-1}(x)}{\partial x} \right|
+:=  p_z(f(x)) \left|\det  \frac{\partial f(x)}{\partial x} \right|
+\]</span> We just defined <span class="math inline">\(f := g^{-1}\)</span>. <span class="math inline">\(g\)</span> is referred as <em>generative</em> path because we try to generate <span class="math inline">\(x\)</span> from a simple distribution <span class="math inline">\(p_z\)</span>, whereas <span class="math inline">\(f\)</span> is referred as <em>normalising</em> path because we try to degenerate <span class="math inline">\(x\)</span> back to <span class="math inline">\(z \sim p_z\)</span>, where <span class="math inline">\(p_z\)</span> is usually normal distribution.</p>
+<p><span class="math inline">\(f\)</span> is usually parameterized by neural network to maximise likelihood <span class="math inline">\(p(x)\)</span>. <span class="math inline">\(f\)</span> is usually chosen such that the determinant of the Jacobian is easy to calculate. Training and evaluation of density requires normalising path while sampling requires generative path as</p>
+<p><span class="math display">\[
+x \sim p(x)
+\mathrel{\Leftrightarrow}
+z \sim p_z(z), x = g(z)
+\]</span></p>
+<p>People often care about <span class="math inline">\(f\)</span> because fast evaluation of <span class="math inline">\(f\)</span> is needed for fast training. If we need fast sampling, then <span class="math inline">\(g\)</span> is cared.</p>
+<p>In SBI, coupling flow and autoregressive flow is commonly used.</p>
+<section id="coupling-flow" class="level2">
+<h2 class="anchored" data-anchor-id="coupling-flow">Coupling flow</h2>
+<p><span class="math display">\[
+\begin{align}
+x &amp;= [x^A, x^B] \\
+\phi &amp;= NN(x^B) \\
+y^A &amp;= \mathbf{h}_\phi(x^A) = [h_{\phi_1}(x_1),...,h_{\phi_d}(x_d)]  \\
+y^B &amp;= x^B \\
+y &amp;= [y^A, y^B]
+\end{align}
+\]</span></p>
+<p>Firstly, <span class="math inline">\(x\)</span> is split into two dimension such that <span class="math inline">\(x^A \in \mathbb{R}^d, x^B \in \mathbb{R}^{D - d}\)</span>. Then one part is fed into NN: <span class="math inline">\(\mathbb{R}^{D - d} \rightarrow \mathbb{R}^k\)</span> to learn parameter <span class="math inline">\(\phi_i \in  \mathbb{R}^k\)</span>. The NN is referred as <em>conditioner</em>. This <span class="math inline">\(\phi\)</span> is then coupled with another part <span class="math inline">\(x^A\)</span> through invertible and differentiable function <span class="math inline">\(\mathbf{h}\)</span> called <em>transformer</em> or <em>coupling function</em>. <span class="math inline">\(k\)</span> depends on the choice of coupling function. Note that transformer is nothing to do with the ‘query-key-value’ transformers. Coupling function is usually applied element-wise. This transformed <span class="math inline">\(x^A\)</span> is then concatenated with <span class="math inline">\(x^B\)</span>, which gives output <span class="math inline">\(y\)</span>. Its inverse is given by</p>
+<p><span class="math display">\[
+\begin{align}
+x^B &amp;= y^B \\
+\phi &amp;= NN(x^B) \\
+x^A &amp; = \mathbf{h}_{\phi}^{-1}(y^A)
+\end{align}
+\]</span></p>
+<p>This ‘coupling’ is repeated multiple times, combined with non-stochastic permutation such that all the dimensions <span class="math inline">\(i = 1,...,D\)</span> are interacted to each other. The determinant of Jacobian is given by <span class="math inline">\(\prod_{i=1}^d \frac{\partial h_{\phi_i}(x_i)}{\partial x_i}\)</span>.</p>
+<p>In NPE, <span class="math inline">\(x \leftarrow \theta\)</span> and the conditioner is also conditioned on data as <span class="math inline">\(\phi = NN(\theta^B, \mathcal{D})\)</span>. In NLE, <span class="math inline">\(x \leftarrow \mathcal{D}\)</span> and <span class="math inline">\(\phi = NN(\mathcal{D}^B, \theta)\)</span></p>
 </section>
-<section id="education" class="level4 g-col-12 g-col-sm-6">
-<h4 data-anchor-id="education">Education</h4>
-<div class="smaller">
-<p>PhD in Computer Science<br> <small>Aalto University, Finland, 2025-2028</small></p>
-<p>MSc in Econometrics<br> <small>TU Dortmund, Germany, 2022-2024</small></p>
-<p>BSc in Economics<br> <small>University of Sussex, UK, 2018-2022</small></p>
+<section id="autoregressive-flow" class="level2">
+<h2 class="anchored" data-anchor-id="autoregressive-flow">Autoregressive flow</h2>
+<p><span class="math display">\[
+\begin{align}
+\text{For } i &amp;= 2,...,D:\\
+\phi_i &amp;= NN(x_{1:i-1}) \\
+y_i &amp;= h_{\phi_i}(x_i)\\
+\end{align}
+\]</span></p>
+<p>where <span class="math inline">\(\phi_1\)</span> is constant. This is very similar to coupling flow except that instead of splitting dimensions into half, dimension is split in autoregressive manners into <span class="math inline">\(x_i\)</span> and <span class="math inline">\(x_{1:i-1}\)</span> mutiple times. In practice, this coupling functions can be implemented without recursion using masking.</p>
+<p>In NPE, <span class="math inline">\(\phi_1 = NN(\mathcal{D}), \phi_i = NN(\theta_{1:i-1}, \mathcal{D}), 1 &lt; i &lt; D\)</span>. In NLE, <span class="math inline">\(\phi_1 = NN(\theta),\phi_i = NN(\mathcal{D}_{1:i-1}, \theta), 1 &lt; i &lt; D\)</span></p>
+</section>
+<section id="coupling-function" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="coupling-function">Coupling function</h2>
+<section id="affine" class="level3">
+<h3 class="anchored" data-anchor-id="affine">Affine</h3>
+<p><span class="math display">\[
+h_{\phi_{i}}(x_i) = \alpha_i x_i + \beta_i, \quad \phi_i = (\alpha_i, \beta_i)
+\]</span></p>
+<p>where <span class="math inline">\(\alpha_i &gt; 0, \beta_i \in \mathbb{R}\)</span>. <!-- Most paper uses notation --> <!-- using element wise multiplication: $y = \alpha \odot x + \beta$. --></p>
+</section>
+<section id="monotonic-rational-quadratic-spline" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="monotonic-rational-quadratic-spline">Monotonic rational quadratic spline</h3>
+<p>In neural spline flow, monotonic rational quadratic spline is used for <span class="math inline">\(h\)</span>. It allows to model more expressive transformation from <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> and to <span class="math inline">\(z\)</span> at final. Monotonicity is necessary for bijectivity.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/Screenshot 2025-04-21 at 19.11.44.png" class="img-fluid figure-img" width="500"></p>
+<figcaption class="margin-caption">Monotonic RQ-spline. Taken from [2]</figcaption>
+</figure>
 </div>
 </section>
-</div>
-</div></div>
-</div>
+</section>
+<section id="bibliography" class="level2">
+<h2 class="anchored" data-anchor-id="bibliography">Bibliography</h2>
+<p>[1] I. Kobyzev, S. J. D. Prince and M. A. Brubaker, “Normalizing Flows: An Introduction and Review of Current Methods,” in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol.&nbsp;43, no. 11, pp.&nbsp;3964-3979.</p>
+<p>[2] Durkan, C., Bekasov, A., Murray, I., &amp; Papamakarios, G. (2019). Neural Spline Flows. Advances in Neural Information Processing Systems, abs/1906.04032. https://proceedings.neurips.cc/paper/2019/hash/7ac71d433f282034e088473244df8c02-Abstract.html</p>
+<p>[3] Radev, S. T., Mertens, U. K., Voss, A., Ardizzone, L., &amp; Kothe, U. (2022). BayesFlow: Learning Complex Stochastic Models With Invertible Neural Networks. IEEE Transactions on Neural Networks and Learning Systems, 33(4), 1452–1466.</p>
+</section>
+<section id="appendix" class="level2">
+<h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
+<section id="dual-coupling" class="level3">
+<h3 class="anchored" data-anchor-id="dual-coupling">Dual coupling</h3>
+<p>Sometimes, one block of coupling is defined as two coupling as in [3] such that both split is transformed by coupling function in one unit of coupling.</p>
+<p><span class="math display">\[
+\begin{align}
+x &amp;= [x^A, x^B] \\
+\phi_1 &amp;= NN_1(x^B) \\
+y^A &amp;= \mathbf{h}_{\phi_1}(x^A) \\
+\phi_2 &amp;=  NN_2(y^A)\\
+y^B &amp;= \mathbf{h}_{\phi_2}(x^B) \\
+y &amp;= [y^A, y^B]
+\end{align}
+\]</span> This is same as applying single coupling flow followed by permutation, which swap <span class="math inline">\(x^A\)</span> and <span class="math inline">\(x^B\)</span> and applying another coupling flow.</p>
+</section>
+<section id="when-d-1" class="level3">
+<h3 class="anchored" data-anchor-id="when-d-1">When <span class="math inline">\(D = 1\)</span></h3>
+<p>In generative model <span class="math inline">\(x\)</span> is usually something high dimensional like image. But in SBI, <span class="math inline">\(D\)</span> could be 1. Coupling flow could be applied in such case although there would be no ‘coupling’ anymore. For example in NPE, if <span class="math inline">\(\theta \in \mathbb{R}\)</span> and consider only one coupling, then we have</p>
+<p><span class="math display">\[
+\begin{align}
+\phi &amp;= NN(\mathcal{D}) \\
+z &amp;= \mathbf{h}_{\phi}(\theta)
+\end{align}
+\]</span> In this case, naturally, coupling flow is same as autoregressive flow given same conditioner and coupling function.</p>
 
 
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -369,6 +485,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

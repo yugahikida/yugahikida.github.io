@@ -30,28 +30,29 @@ format:
 ---
 ::: {#about-block}
 I am a doctoral researcher in the [Probabilistic Machine Learning group](https://research.cs.aalto.fi/pml/) 
-at Aalto University, working on compute-efficient and robust 
-simulation-based inference, advised by [Ayush Bharti](https://bharti-ayush.github.io/) (Aalto) and [François-Xavier Briol](https://fxbriol.github.io/) (UCL).
+at Aalto University, working on Simulation-Based Inference (SBI), advised by [Ayush Bharti](https://bharti-ayush.github.io/) (Aalto) and [François-Xavier Briol](https://fxbriol.github.io/) (UCL). 
 
-Prior to that, I was a master student in Econometrics at [Department of Statistics,
-TU Dortmund University](https://statistik.tu-dortmund.de/en/department/), 
-where I worked as a research assistant on the development of R packages for 
-Bayesian model comparison (with [Marvin Schmitt](https://www.marvinschmitt.com/)) 
-and Bayesian vector autoregression (with [Jan Prüser](https://sites.google.com/view/janprueser/welcome)).
-For my master's thesis, I worked on amortized Bayesian experimental design 
-for multiple candidate models under the supervision of Marvin Schmitt,
-[Desi Ivanova](https://desirivanova.com/), and [Paul Bürkner](https://paulbuerkner.com/).
+
+In many real-world problems arising in industry and science, the likelihood function is unavailable, which poses a major challenge to the application of traditional Bayesian inference. SBI overcomes this limitation by enabling Bayesian inference without direct access to the likelihood. My research focuses on two key aspects of SBI: (1) efficiency, aiming to reduce the number of required data, and (2) robustness, by detecting and/or mitigating the impact of model misspecification on inference quality.
+
+
+<!-- Prior to that, I was a master student in Econometrics at [Department of Statistics, -->
+<!-- TU Dortmund University](https://statistik.tu-dortmund.de/en/department/),  -->
+<!-- where I worked as a research assistant on the development of R packages for  -->
+<!-- Bayesian model comparison (with [Marvin Schmitt](https://www.marvinschmitt.com/))  -->
+<!-- and Bayesian vector autoregression (with [Jan Prüser](https://sites.google.com/view/janprueser/welcome)). -->
+<!-- For my master's thesis, I worked on amortized Bayesian experimental design  -->
+<!-- for multiple candidate models under the supervision of Marvin Schmitt, -->
+<!-- [Desi Ivanova](https://desirivanova.com/), and [Paul Bürkner](https://paulbuerkner.com/). -->
 
 Click [here](cv/index.qmd) to see my CV.
 ---
 ::::{.grid}
 ::: {.g-col-12 .g-col-sm-6}
 #### Interests
-Bayesian Statistics <br>
 Bayesian Experimental Design <br>
-Simulation-based Inference <br>
+Simulation-Based Inference <br>
 Amortized Inference <br>
-Likelihood-free Inference
 :::
 ::: {.g-col-12 .g-col-sm-6}
 #### Education
