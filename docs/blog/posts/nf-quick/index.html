@@ -271,17 +271,18 @@ y_i &amp;= h_{\phi_i}(x_i)\\
 <p><span class="math display">\[
 h_{\phi_{i}}(x_i) = \alpha_i x_i + \beta_i, \quad \phi_i = (\alpha_i, \beta_i)
 \]</span></p>
-<p>where <span class="math inline">\(\alpha_i &gt; 0, \beta_i \in \mathbb{R}\)</span>. For affine coupling function, <span class="math inline">\(k = d \times 2\)</span> <!-- Most paper uses notation --> <!-- using element wise multiplication: $y = \alpha \odot x + \beta$. --></p>
+<p>where <span class="math inline">\(\alpha_i &gt; 0, \beta_i \in \mathbb{R}\)</span>. For affine coupling function, <span class="math inline">\(k = d \times 2\)</span>. <!-- Most paper uses notation --> <!-- using element wise multiplication: $y = \alpha \odot x + \beta$. --></p>
 </section>
 <section id="monotonic-rational-quadratic-spline" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="monotonic-rational-quadratic-spline">Monotonic rational quadratic spline</h3>
-<p>In neural spline flow, monotonic rational quadratic spline is used for <span class="math inline">\(h\)</span>. It allows to model more expressive transformation from <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> and to <span class="math inline">\(z\)</span> at final. Monotonicity is necessary for bijectivity.</p>
+<p>In neural spline flow, monotonic rational quadratic spline (RQ-spline) is used for <span class="math inline">\(h\)</span>. It allows to model more expressive transformation from <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> and to <span class="math inline">\(z\)</span> at final. Monotonicity is necessary for bijectivity. In a nutshell, <span class="math inline">\(h\)</span> is defined in the interval <span class="math inline">\([-B, B]\)</span> and that interval is split into <span class="math inline">\(K\)</span> bins using <span class="math inline">\(K + 1\)</span> knots, where <span class="math inline">\(B\)</span> and <span class="math inline">\(K\)</span> are hyper-parameters. The height and the width of the bins are trainable parameters <span class="math inline">\((\phi_{h,j}, \phi_{w, j}), j = 1,...,K\)</span>, and derivatives at each knots are also trainable parameters <span class="math inline">\(\phi_{d,j}, j = 1,...,K-1\)</span>. These parameters defines the RQ-spline. In total, the coupling function have <span class="math inline">\(k = (3K - 1) \times d\)</span> parameters.</p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="images/Screenshot 2025-04-21 at 19.11.44.png" class="img-fluid figure-img" width="500"></p>
 <figcaption class="margin-caption">Monotonic RQ-spline. Taken from [2]</figcaption>
 </figure>
 </div>
+<p>In this figure, <span class="math inline">\(K = 10\)</span> is picked.</p>
 </section>
 </section>
 <section id="bibliography" class="level2">

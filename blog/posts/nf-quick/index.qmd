@@ -129,18 +129,21 @@ $$
 h_{\phi_{i}}(x_i) = \alpha_i x_i + \beta_i, \quad \phi_i = (\alpha_i, \beta_i)
 $$
 
-where $\alpha_i > 0, \beta_i \in \mathbb{R}$. For affine coupling function, $k = d \times 2$
+where $\alpha_i > 0, \beta_i \in \mathbb{R}$. For affine coupling function, $k = d \times 2$.
 <!-- Most paper uses notation -->
 <!-- using element wise multiplication: $y = \alpha \odot x + \beta$. -->
 
 ### Monotonic rational quadratic spline
 
-In neural spline flow, monotonic rational quadratic spline is used for
-$h$. It allows to model more expressive transformation from $x$ to $y$
-and to $z$ at final. Monotonicity is necessary for bijectivity.
+In neural spline flow, monotonic rational quadratic spline (RQ-spline) is used for $h$. It allows to model more expressive transformation from $x$ to $y$
+and to $z$ at final. Monotonicity is necessary for bijectivity. In a nutshell, 
+$h$ is defined in the interval $[-B, B]$ and that interval is split into $K$ bins using $K + 1$ knots, where $B$ and $K$ are hyper-parameters. The height and the width of the bins are trainable parameters $(\phi_{h,j}, \phi_{w, j}), j = 1,...,K$, and derivatives at each knots are also trainable parameters $\phi_{d,j}, j = 1,...,K-1$. These parameters defines the RQ-spline. In total, the coupling function have $k = (3K - 1) \times d$ parameters.
+
 
 ![Monotonic RQ-spline. Taken from
 \[2\]](images/Screenshot%202025-04-21%20at%2019.11.44.png){width="500"}
+
+In this figure, $K = 10$ is picked. 
 
 ## Bibliography
 
