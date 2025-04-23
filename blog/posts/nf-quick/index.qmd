@@ -74,7 +74,7 @@ $$
 Firstly, $x$ is split into two dimension such that
 $x^A \in \mathbb{R}^d, x^B \in \mathbb{R}^{D - d}$. Then one part is fed
 into NN: $\mathbb{R}^{D - d} \rightarrow \mathbb{R}^k$ to learn
-parameter $\phi_i \in  \mathbb{R}^k$. The NN is referred as
+parameter $\phi \in  \mathbb{R}^k$. The NN is referred as
 *conditioner*. This $\phi$ is then coupled with another part $x^A$
 through invertible and differentiable function $\mathbf{h}$ called
 *transformer* or *coupling function*. $k$ depends on the choice of
@@ -129,7 +129,7 @@ $$
 h_{\phi_{i}}(x_i) = \alpha_i x_i + \beta_i, \quad \phi_i = (\alpha_i, \beta_i)
 $$
 
-where $\alpha_i > 0, \beta_i \in \mathbb{R}$.
+where $\alpha_i > 0, \beta_i \in \mathbb{R}$. For affine coupling function, $k = d \times 2$
 <!-- Most paper uses notation -->
 <!-- using element wise multiplication: $y = \alpha \odot x + \beta$. -->
 
@@ -186,7 +186,7 @@ flow.
 
 In generative model $x$ is usually something high dimensional like
 image. But in SBI, $D$ could be 1. Coupling flow could be applied in
-such case although there would be no 'coupling' anymore. For example in
+such case. For example in
 NPE, if $\theta \in \mathbb{R}$ and consider only one coupling, then we
 have
 
@@ -195,5 +195,9 @@ $$
 \phi &= NN(\mathcal{D}) \\
 z &= \mathbf{h}_{\phi}(\theta)
 \end{align}
-$$ In this case, naturally, coupling flow is same as autoregressive flow
+$$ 
+
+In this case, $\theta$ is not going to be coupled with another split of $\theta$ because $\theta$ is just one-dimensional, but it is still coupled with $\mathcal{D}$.
+
+In this case, naturally, coupling flow is same as autoregressive flow
 given same conditioner and coupling function.

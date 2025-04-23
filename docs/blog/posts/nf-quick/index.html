@@ -241,7 +241,7 @@ y^B &amp;= x^B \\
 y &amp;= [y^A, y^B]
 \end{align}
 \]</span></p>
-<p>Firstly, <span class="math inline">\(x\)</span> is split into two dimension such that <span class="math inline">\(x^A \in \mathbb{R}^d, x^B \in \mathbb{R}^{D - d}\)</span>. Then one part is fed into NN: <span class="math inline">\(\mathbb{R}^{D - d} \rightarrow \mathbb{R}^k\)</span> to learn parameter <span class="math inline">\(\phi_i \in  \mathbb{R}^k\)</span>. The NN is referred as <em>conditioner</em>. This <span class="math inline">\(\phi\)</span> is then coupled with another part <span class="math inline">\(x^A\)</span> through invertible and differentiable function <span class="math inline">\(\mathbf{h}\)</span> called <em>transformer</em> or <em>coupling function</em>. <span class="math inline">\(k\)</span> depends on the choice of coupling function. Note that transformer is nothing to do with the ‘query-key-value’ transformers. Coupling function is usually applied element-wise. This transformed <span class="math inline">\(x^A\)</span> is then concatenated with <span class="math inline">\(x^B\)</span>, which gives output <span class="math inline">\(y\)</span>. Its inverse is given by</p>
+<p>Firstly, <span class="math inline">\(x\)</span> is split into two dimension such that <span class="math inline">\(x^A \in \mathbb{R}^d, x^B \in \mathbb{R}^{D - d}\)</span>. Then one part is fed into NN: <span class="math inline">\(\mathbb{R}^{D - d} \rightarrow \mathbb{R}^k\)</span> to learn parameter <span class="math inline">\(\phi \in  \mathbb{R}^k\)</span>. The NN is referred as <em>conditioner</em>. This <span class="math inline">\(\phi\)</span> is then coupled with another part <span class="math inline">\(x^A\)</span> through invertible and differentiable function <span class="math inline">\(\mathbf{h}\)</span> called <em>transformer</em> or <em>coupling function</em>. <span class="math inline">\(k\)</span> depends on the choice of coupling function. Note that transformer is nothing to do with the ‘query-key-value’ transformers. Coupling function is usually applied element-wise. This transformed <span class="math inline">\(x^A\)</span> is then concatenated with <span class="math inline">\(x^B\)</span>, which gives output <span class="math inline">\(y\)</span>. Its inverse is given by</p>
 <p><span class="math display">\[
 \begin{align}
 x^B &amp;= y^B \\
@@ -271,7 +271,7 @@ y_i &amp;= h_{\phi_i}(x_i)\\
 <p><span class="math display">\[
 h_{\phi_{i}}(x_i) = \alpha_i x_i + \beta_i, \quad \phi_i = (\alpha_i, \beta_i)
 \]</span></p>
-<p>where <span class="math inline">\(\alpha_i &gt; 0, \beta_i \in \mathbb{R}\)</span>. <!-- Most paper uses notation --> <!-- using element wise multiplication: $y = \alpha \odot x + \beta$. --></p>
+<p>where <span class="math inline">\(\alpha_i &gt; 0, \beta_i \in \mathbb{R}\)</span>. For affine coupling function, <span class="math inline">\(k = d \times 2\)</span> <!-- Most paper uses notation --> <!-- using element wise multiplication: $y = \alpha \odot x + \beta$. --></p>
 </section>
 <section id="monotonic-rational-quadratic-spline" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="monotonic-rational-quadratic-spline">Monotonic rational quadratic spline</h3>
@@ -309,13 +309,15 @@ y &amp;= [y^A, y^B]
 </section>
 <section id="when-d-1" class="level3">
 <h3 class="anchored" data-anchor-id="when-d-1">When <span class="math inline">\(D = 1\)</span></h3>
-<p>In generative model <span class="math inline">\(x\)</span> is usually something high dimensional like image. But in SBI, <span class="math inline">\(D\)</span> could be 1. Coupling flow could be applied in such case although there would be no ‘coupling’ anymore. For example in NPE, if <span class="math inline">\(\theta \in \mathbb{R}\)</span> and consider only one coupling, then we have</p>
+<p>In generative model <span class="math inline">\(x\)</span> is usually something high dimensional like image. But in SBI, <span class="math inline">\(D\)</span> could be 1. Coupling flow could be applied in such case. For example in NPE, if <span class="math inline">\(\theta \in \mathbb{R}\)</span> and consider only one coupling, then we have</p>
 <p><span class="math display">\[
 \begin{align}
 \phi &amp;= NN(\mathcal{D}) \\
 z &amp;= \mathbf{h}_{\phi}(\theta)
 \end{align}
-\]</span> In this case, naturally, coupling flow is same as autoregressive flow given same conditioner and coupling function.</p>
+\]</span></p>
+<p>In this case, <span class="math inline">\(\theta\)</span> is not going to be coupled with another split of <span class="math inline">\(\theta\)</span> because <span class="math inline">\(\theta\)</span> is just one-dimensional, but it is still coupled with <span class="math inline">\(\mathcal{D}\)</span>.</p>
+<p>In this case, naturally, coupling flow is same as autoregressive flow given same conditioner and coupling function.</p>
 
 
 </section>
