@@ -7,55 +7,6 @@
     "text": "Download current CV"
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Quick note on Normalising flow for SBI\n\n\n\n\n\n\nSBI\n\n\n\n\n\n\n\n\n\nApr 21, 2025\n\n\nYuga Hikida\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Yuga Hikida",
-    "section": "",
-    "text": "Bluesky\n  \n  \n    \n     Email\n  \n\n  \n  \nI am a doctoral researcher in the Probabilistic Machine Learning group at Aalto University, working on Simulation-Based Inference (SBI), advised by Ayush Bharti (Aalto) and François-Xavier Briol (UCL).\nIn many real-world problems arising in industry and science, the likelihood function is unavailable, which poses a major challenge to the application of traditional Bayesian inference. SBI overcomes this limitation by enabling Bayesian inference without direct access to the likelihood. My research focuses on two key aspects of SBI: (1) efficiency, aiming to reduce the number of required data, and (2) robustness, by detecting and/or mitigating the impact of model misspecification on inference quality.\n\n\n\n\n\n\n\n\nClick here to see my CV.\n\n\n\nInterests\nBayesian Experimental Design  Simulation-Based Inference  Amortized Inference \n\n\nEducation\n\nPhD in Computer Science Aalto University, Finland, 2025-2028\nMSc in Econometrics TU Dortmund, Germany, 2022-2024\nBSc in Economics University of Sussex, UK, 2018-2022"
-  },
-  {
-    "objectID": "japanese/index.html",
-    "href": "japanese/index.html",
-    "title": "疋田 悠河",
-    "section": "",
-    "text": "疋田 悠河\nフィンランドで計算機科学博士課程。主にシミュレーションに基づく統計的推論に興味があります。\n\n\n来歴\n2025- 博士研究員 @アアルト大学PMLグループ  頑健で能率的なシミュレーションに基づく統計的推論、尤度フリー推論、実験計画\n2023-2024 リサーチアシスタント @ドルトムント工科大学統計学部  Rパッケージの開発、償却推論\n2021-2023 DSインターン @Rejoui  ログデータを使った顧客の行動解析、医療分野のテキストマイニング\n\n\n\n興味\nベイズ実験計画  シミュレーションに基づく統計的推論  償却推論 \n\n\n教育\n\n2025-2028 計算機科学博士   アアルト大学, フィンランド \n2022-2024 計量経済学修士   ドルトムント工科大学, ドイツ \n2018-2022 経済学学士   サセックス大学, イギリス \n\n\n\n\n詳しい情報は英語ページをご覧ください。\nプロジェクト一覧  履歴書  コンタクト"
-  },
-  {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "arXiv Preprint\nThe paper suggests the method to visualize 4D compositional data on a 2D canvas. This can be used to visualize data such as posterior model probabilities for 4 models on (2D) paper without loss of information and distortion. My contributions are general polishing of manuscript, creating 3D interactive figures and animation, and development of R package (planned)."
-  },
-  {
-    "objectID": "projects/index.html#lossless-visualization-of-4d-compositional-data-on-a-2d-canvas",
-    "href": "projects/index.html#lossless-visualization-of-4d-compositional-data-on-a-2d-canvas",
-    "title": "Projects",
-    "section": "",
-    "text": "arXiv Preprint\nThe paper suggests the method to visualize 4D compositional data on a 2D canvas. This can be used to visualize data such as posterior model probabilities for 4 models on (2D) paper without loss of information and distortion. My contributions are general polishing of manuscript, creating 3D interactive figures and animation, and development of R package (planned)."
-  },
-  {
-    "objectID": "projects/index.html#r-package-metabmc",
-    "href": "projects/index.html#r-package-metabmc",
-    "title": "Projects",
-    "section": "R package “metabmc”",
-    "text": "R package “metabmc”\nThe package implements meta-uncertainty quantification for Bayesian model comparison. This can be used to evaluate trustworthiness of posterior model probabilities, which tend to take extreme values. Check the project website for more detail. The development is still in progress and will be published in near future."
-  },
-  {
-    "objectID": "projects/index.html#r-package-for-bayesian-proxy-structural-var",
-    "href": "projects/index.html#r-package-for-bayesian-proxy-structural-var",
-    "title": "Projects",
-    "section": "R package for Bayesian proxy structural VAR",
-    "text": "R package for Bayesian proxy structural VAR\nThe package implements Bayesian vector autoregressive model with proxy variables for structural shocks in economy. This can help agents like government and central bank to make decisions, considering the expected effects in the system of economy. The development is still in progress and will be published in near future."
-  },
-  {
     "objectID": "blog/posts/nf-quick/index.html",
     "href": "blog/posts/nf-quick/index.html",
     "title": "Quick note on Normalising flow for SBI",
@@ -98,10 +49,52 @@
     "text": "Appendix\n\nDual coupling\nSometimes, one block of coupling is defined as two coupling as in [3] such that both split is transformed by coupling function in one unit of coupling.\n\\[\n\\begin{align}\nx &= [x^A, x^B] \\\\\n\\phi_1 &= NN_1(x^B) \\\\\ny^A &= \\mathbf{h}_{\\phi_1}(x^A) \\\\\n\\phi_2 &=  NN_2(y^A)\\\\\ny^B &= \\mathbf{h}_{\\phi_2}(x^B) \\\\\ny &= [y^A, y^B]\n\\end{align}\n\\]\nThis is same as applying single coupling flow followed by permutation, which swap \\(x^A\\) and \\(x^B\\) and applying another coupling flow.\n\n\nWhen \\(D = 1\\)\nIn generative model \\(x\\) is usually something high dimensional like image. But in SBI, \\(D\\) could be 1. Coupling flow could be applied in such case. For example in NPE, if \\(\\theta \\in \\mathbb{R}\\) and consider only one coupling, then we have\n\\[\n\\begin{align}\n\\phi &= NN(\\mathcal{D}) \\\\\nz &= \\mathbf{h}_{\\phi}(\\theta)\n\\end{align}\n\\]\nIn this case, \\(\\theta\\) is not going to be coupled with another split of \\(\\theta\\) because \\(\\theta\\) is just one-dimensional, but it is still coupled with \\(\\mathcal{D}\\).\nIn this case, naturally, coupling flow is same as autoregressive flow given same conditioner and coupling function."
   },
   {
-    "objectID": "googlebca4a2421a5aa054.html",
-    "href": "googlebca4a2421a5aa054.html",
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint\nThe paper suggests the method to visualize 4D compositional data on a 2D canvas. This can be used to visualize data such as posterior model probabilities for 4 models on (2D) paper without loss of information and distortion. My contributions are general polishing of manuscript, creating 3D interactive figures and animation, and development of R package (planned)."
+  },
+  {
+    "objectID": "projects/index.html#lossless-visualization-of-4d-compositional-data-on-a-2d-canvas",
+    "href": "projects/index.html#lossless-visualization-of-4d-compositional-data-on-a-2d-canvas",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint\nThe paper suggests the method to visualize 4D compositional data on a 2D canvas. This can be used to visualize data such as posterior model probabilities for 4 models on (2D) paper without loss of information and distortion. My contributions are general polishing of manuscript, creating 3D interactive figures and animation, and development of R package (planned)."
+  },
+  {
+    "objectID": "projects/index.html#r-package-metabmc",
+    "href": "projects/index.html#r-package-metabmc",
+    "title": "Projects",
+    "section": "R package “metabmc”",
+    "text": "R package “metabmc”\nThe package implements meta-uncertainty quantification for Bayesian model comparison. This can be used to evaluate trustworthiness of posterior model probabilities, which tend to take extreme values. Check the project website for more detail. The development is still in progress and will be published in near future."
+  },
+  {
+    "objectID": "projects/index.html#r-package-for-bayesian-proxy-structural-var",
+    "href": "projects/index.html#r-package-for-bayesian-proxy-structural-var",
+    "title": "Projects",
+    "section": "R package for Bayesian proxy structural VAR",
+    "text": "R package for Bayesian proxy structural VAR\nThe package implements Bayesian vector autoregressive model with proxy variables for structural shocks in economy. This can help agents like government and central bank to make decisions, considering the expected effects in the system of economy. The development is still in progress and will be published in near future."
+  },
+  {
+    "objectID": "japanese/index.html",
+    "href": "japanese/index.html",
+    "title": "疋田 悠河",
+    "section": "",
+    "text": "疋田 悠河\nフィンランドで計算機科学博士課程。主にシミュレーションに基づく統計的推論に興味があります。\n\n\n来歴\n2025- 博士研究員 @アアルト大学PMLグループ  頑健で能率的なシミュレーションに基づく統計的推論、尤度フリー推論、実験計画\n2023-2024 リサーチアシスタント @ドルトムント工科大学統計学部  Rパッケージの開発、償却推論\n2021-2023 DSインターン @Rejoui  ログデータを使った顧客の行動解析、医療分野のテキストマイニング\n\n\n\n興味\nベイズ実験計画  シミュレーションに基づく統計的推論  償却推論 \n\n\n教育\n\n2025-2028 計算機科学博士   アアルト大学, フィンランド \n2022-2024 計量経済学修士   ドルトムント工科大学, ドイツ \n2018-2022 経済学学士   サセックス大学, イギリス \n\n\n\n\n詳しい情報は英語ページをご覧ください。\nプロジェクト一覧  履歴書  コンタクト"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Yuga Hikida",
     "section": "",
-    "text": "google-site-verification: googlebca4a2421a5aa054.html"
+    "text": "Bluesky\n  \n  \n    \n     Email\n  \n\n  \n  \nI am a doctoral researcher in the Probabilistic Machine Learning group at Aalto University, working on Simulation-Based Inference (SBI), advised by Ayush Bharti (Aalto) and François-Xavier Briol (UCL).\nIn many real-world problems arising in industry and science, the likelihood function is unavailable, which poses a major challenge to the application of traditional Bayesian inference. SBI overcomes this limitation by enabling Bayesian inference without direct access to the likelihood. My research focuses on two key aspects of SBI: (1) efficiency, aiming to reduce the number of required data, and (2) robustness, by detecting and/or mitigating the impact of model misspecification on inference quality.\n\n\n\n\n\n\n\n\nClick here to see my CV.\n\n\n\nInterests\nBayesian Experimental Design  Simulation-Based Inference  Amortized Inference \n\n\nEducation\n\nPhD in Computer Science Aalto University, Finland, 2025-2028\nMSc in Econometrics TU Dortmund, Germany, 2022-2024\nBSc in Economics University of Sussex, UK, 2018-2022"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Quick note on Normalising flow for SBI\n\n\n\n\n\n\nSBI\n\n\n\n\n\n\n\n\n\nApr 21, 2025\n\n\nYuga Hikida\n\n\n\n\n\n\nNo matching items"
   }
 ]
