@@ -9,7 +9,7 @@
 
 ### 来歴
 
-2025- 博士研究員 @[アアルト大学PMLグループ](https://research.cs.aalto.fi/pml/) <br> <small>頑健で能率的なシミュレーションに基づく統計的推論、尤度フリー推論、実験計画</small>
+2025- 博士研究員 @[アアルト大学PMLグループ](https://research.cs.aalto.fi/pml/) <br> <small>頑健で能率的なシミュレーションに基づく統計的推論</small>
 
 2023-2024 リサーチアシスタント @[ドルトムント工科大学統計学部](https://statistik.tu-dortmund.de/en/department/) <br> <small>Rパッケージの開発、償却推論</small>
 
@@ -23,9 +23,10 @@
 #### 興味
 
 ベイズ実験計画 <br> 
-シミュレーションに基づく統計的推論 <br> 
-償却推論 <br>
+償却ベイズ推論 <br> 
+ベイズ統計学 <br>
 :::
+
 
 ::: {.g-col-12 .g-col-sm-6}
 #### 教育
