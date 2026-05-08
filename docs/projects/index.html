@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -165,6 +199,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="multilevel-neural-simulation-based-inference" class="level2">
+<h2 class="anchored" data-anchor-id="multilevel-neural-simulation-based-inference">Multilevel neural simulation-based inference</h2>
+<p><a href="https://arxiv.org/abs/2506.06087" target="_blank">Paper (NeurIPS 2025)</a></p>
+<center>
+<img src="../img/multilevel_neural_sbi.png" style="height: 50%; width: 50%; object-fit: contain" onclick="window.open('https://arxiv.org/abs/2506.06087', 'blank');">
+</center>
+<p>We suggest a method to combine multifidelity simulation in neural SBI. In many scientific domain, it is common to have simulators with different fidelity levels; low fidelity simulator simplifies reality a lot, or use coarse mesh size, while high fidelity simulator is more aligned with real world. Ideally, we would use many high-fidelity samples to do SBI; however it is often computationally prohibitive. In this paper, we suggest a method to combine these multifidelity simulator using the framework of multilevel Monte Carle (MLMC). We show that using MLMC to approximate the training objective of neural SBI lead cost efficient SBI.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cite
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">hikida2025</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>={Multilevel neural simulation-based inference},</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Hikida, Yuga and Bharti, Ayush and Jeffrey, Niall and Briol, Fran{<span class="ch">\c</span>{c}}ois-Xavier},</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span>={Advances in Neural Information Processing Systems (NeurIPS)},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>={2025},</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">url</span>={https://arxiv.org/abs/2506.06087}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="amortised-and-provably-robust-simulation-based-inference" class="level2">
+<h2 class="anchored" data-anchor-id="amortised-and-provably-robust-simulation-based-inference">Amortised and provably-robust simulation-based inference</h2>
+<p><a href="https://arxiv.org/abs/2602.11325" target="_blank">arXiv Preprint</a></p>
+<p>We leverage the framework of generalised Bayesian inference (GenBayes) to achieve posterior estimation that is robust to outliers. Specifically, we propose eural Score Matching Bayes, a method that uses the score matching divergence as the loss function within the GenBayes framework. In this approach, the parameters of an unnormalised likelihood are modelled by a neural network, enabling application in simulator-based settings.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cite
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">bharti2026amortised</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>         = {Amortised and Provably-Robust Simulation-Based Inference},</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>        = {Bharti, Ayush and Dellaporta, Charita and Hikida, Yuga and Briol, Fran{<span class="ch">\c</span>{c}}ois-Xavier},</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>          = {2026},</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">eprint</span>        = {2602.11325},</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">archivePrefix</span> = {arXiv},</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">primaryClass</span>  = {stat.ML},</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">doi</span>           = {10.48550/arXiv.2602.11325}</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<details>
+<summary>
+<strong>Past projects</strong>
+</summary>
 <section id="lossless-visualization-of-4d-compositional-data-on-a-2d-canvas" class="level2">
 <h2 class="anchored" data-anchor-id="lossless-visualization-of-4d-compositional-data-on-a-2d-canvas">Lossless Visualization of 4D Compositional Data on a 2D Canvas</h2>
 <!-- <img src="project_1_banner.png" style="height: 100%; width: 100%; object-fit: contain" onclick="window.open('https://arxiv.org/abs/2210.07278', 'blank');"/> -->
@@ -183,6 +285,10 @@ ul.task-list li input[type="checkbox"] {
 <p>The package implements Bayesian vector autoregressive model with proxy variables for structural shocks in economy. This can help agents like government and central bank to make decisions, considering the expected effects in the system of economy. The development is still in progress and will be published in near future.</p>
 
 
+</section>
+</details></div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

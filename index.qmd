@@ -14,16 +14,16 @@ about:
     - icon: envelope
       text: Email
       href: "mailto:yuga.hikida@gmail.com"
-    # - icon: github
-    #   text: Github
-    #   href: https://github.com/yugahikida
-    # - icon: linkedin
-    #   text: LinkedIn
-    #   href: https://www.linkedin.com/in/yugahikida
-    # - icon: google-scholar
-    #   text: "{{< fa graduation-cap >}} Google Scholar"
-    #   href: https://scholar.google.com/citations?user=jvKJHacAAAAJ
-    
+    - icon: github
+      text: Github
+      href: https://github.com/yugahikida
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/yugahikida
+    - icon: google-scholar
+      text: "{{< fa graduation-cap >}} Google Scholar"
+      href: https://scholar.google.com/citations?user=jvKJHacAAAAJ
+
 format:
   html:
     page-layout: full
@@ -50,9 +50,10 @@ Click [here](cv/index.qmd) to see my CV.
 ::::{.grid}
 ::: {.g-col-12 .g-col-sm-6}
 #### Interests
-Bayesian Experimental Design <br>
 Simulation-Based Inference <br>
-Amortized Inference <br>
+Amortized Bayesian Inference <br>
+Bayesian Statistics <br>
+
 :::
 ::: {.g-col-12 .g-col-sm-6}
 #### Education

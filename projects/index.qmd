@@ -2,6 +2,81 @@
 title: Projects
 ---
 
+## Multilevel neural simulation-based inference
+
+<a href="https://arxiv.org/abs/2506.06087" target="_blank">Paper (NeurIPS 2025)</a>
+
+<center>
+<img src="../img/multilevel_neural_sbi.png" style="height: 50%; width: 50%; object-fit: contain" onclick="window.open('https://arxiv.org/abs/2506.06087', 'blank');"/>
+</center>
+
+
+We suggest a method to combine multifidelity simulation in neural SBI. 
+In many scientific domain, it is common to have simulators with different fidelity
+levels; low fidelity simulator simplifies reality a lot, or use coarse mesh size, 
+while high fidelity simulator is more aligned with real world. Ideally, we would
+use many high-fidelity samples to do SBI; however it is often computationally 
+prohibitive. In this paper, we suggest a method to combine these multifidelity 
+simulator using the framework of multilevel Monte Carle (MLMC). We show that using
+MLMC to approximate the training objective of neural SBI lead cost efficient SBI.
+
+::: {.callout-note collapse="true"}
+## Cite
+
+```bibtex
+@article{hikida2025,
+  title={Multilevel neural simulation-based inference},
+  author={Hikida, Yuga and Bharti, Ayush and Jeffrey, Niall and Briol, Fran{\c{c}}ois-Xavier},
+  journal={Advances in Neural Information Processing Systems (NeurIPS)},
+  year={2025},
+  url={https://arxiv.org/abs/2506.06087}
+  }
+```
+:::
+
+
+## Amortised and provably-robust simulation-based inference
+
+
+<a href="https://arxiv.org/abs/2602.11325" target="_blank">arXiv Preprint</a>
+
+We leverage the framework of generalised Bayesian inference (GenBayes) to achieve 
+posterior estimation that is robust to outliers. Specifically, we propose 
+eural Score Matching Bayes, a method that uses the score matching divergence as 
+the loss function within the GenBayes framework. In this approach, the parameters 
+of an unnormalised likelihood are modelled by a neural network, enabling application 
+in simulator-based settings.
+
+::: {.callout-note collapse="true"}
+## Cite
+
+```bibtex
+@article{bharti2026amortised,
+  title         = {Amortised and Provably-Robust Simulation-Based Inference},
+  author        = {Bharti, Ayush and Dellaporta, Charita and Hikida, Yuga and Briol, Fran{\c{c}}ois-Xavier},
+  year          = {2026},
+  eprint        = {2602.11325},
+  archivePrefix = {arXiv},
+  primaryClass  = {stat.ML},
+  doi           = {10.48550/arXiv.2602.11325}
+}
+```
+:::
+
+
+
+
+
+
+
+
+
+::: {.callout-note collapse="true" appearance="simple" icon=false}
+
+<details>
+<summary><strong>Past projects</strong></summary>
+
+
 ## Lossless Visualization of 4D Compositional Data on a 2D Canvas
 
 <!-- <img src="project_1_banner.png" style="height: 100%; width: 100%; object-fit: contain" onclick="window.open('https://arxiv.org/abs/2210.07278', 'blank');"/> -->
@@ -33,7 +108,5 @@ The package implements Bayesian vector autoregressive model with proxy variables
 for structural shocks in economy. This can help agents like government and central
 bank to make decisions, considering the expected effects in the system of economy. 
 The development is still in progress and will be published in near future.
-
-
 
 
