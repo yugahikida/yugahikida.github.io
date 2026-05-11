@@ -42,7 +42,7 @@ MLMC to approximate the training objective of neural SBI lead cost efficient SBI
 
 We leverage the framework of generalised Bayesian inference (GenBayes) to achieve 
 posterior estimation that is robust to outliers. Specifically, we propose 
-eural Score Matching Bayes, a method that uses the score matching divergence as 
+Neural Score Matching Bayes, a method that uses the score matching divergence as 
 the loss function within the GenBayes framework. In this approach, the parameters 
 of an unnormalised likelihood are modelled by a neural network, enabling application 
 in simulator-based settings.
